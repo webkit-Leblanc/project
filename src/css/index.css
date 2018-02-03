@@ -1,5 +1,206 @@
-h1 {
-  background: #ddd; }
+@charset "UTF-8";
+#banner {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
 
-h2 {
-  font-size: 12px; }
+#banner .carousel-box {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1920px;
+  height: 450px;
+}
+
+/* 继承样式 */
+#main .hot-recommend-box h3, #main .goods-floor-box .gds-title h3 {
+  display: inline-block;
+  line-height: 24px;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+#main .hot-recommend-box span, #main .goods-floor-box .gds-title span {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #999;
+}
+
+#main {
+  background: #f9f9f9;
+}
+
+#main .special-box {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+#main .special-box a {
+  float: left;
+  display: block;
+  width: 292px;
+  margin-right: 8px;
+}
+
+#main .hot-recommend-box {
+  margin-top: 30px;
+}
+
+#main .hot-recommend-box .hot-recommend-pic a {
+  display: block;
+  float: left;
+  width: 240px;
+  height: 260px;
+  border-left: 1px solid #ddd;
+}
+
+#main .hot-recommend-box .hot-recommend-pic a:first-child {
+  border-left: 0;
+}
+
+#main .hot-recommend-box .hot-recommend-pic a img {
+  width: 240px;
+  height: 260px;
+}
+
+#main .adver-middle {
+  margin-top: 20px;
+}
+
+#main .adver-middle a {
+  display: block;
+  width: 1200px;
+  height: 90px;
+}
+
+#main .adver-middle a img {
+  width: 1200px;
+  height: 90px;
+}
+
+#main .goods-floor-box {
+  margin-top: 40px;
+}
+
+#main .goods-floor-box .gds-title a {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 14px;
+  height: 14px;
+  /* 去除多余高度 */
+  line-height: 12px;
+  color: #666;
+  border-right: 1px solid #666;
+}
+
+#main .goods-floor-box .gds-title a:last-child {
+  border: 0;
+}
+
+#main .goods-floor-box .gds-big-pic {
+  float: left;
+}
+
+#main .goods-floor-box .gds-big-pic a {
+  display: block;
+}
+
+#main .goods-floor-box .gds-big-pic a img {
+  width: 360px;
+  height: 376px;
+}
+
+#main .goods-floor-box .gds-big-pic p {
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  background: #7f6fd9;
+  padding-top: 20px;
+}
+
+#main .goods-floor-box .gds-big-pic p a {
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 28px;
+  font-size: 12px;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+#main .goods-floor-box .gds-small-pic {
+  float: left;
+}
+
+#main .goods-floor-box .gds-small-pic ul {
+  width: 602px;
+}
+
+#main .goods-floor-box .gds-small-pic ul li {
+  float: left;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  width: 300px;
+  height: 223px;
+}
+
+#main .goods-floor-box .gds-small-pic ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+#main .goods-floor-box .gds-hot-sale {
+  background: #fff;
+  height: 446px;
+}
+
+#main .goods-floor-box .gds-hot-sale h4 {
+  display: block;
+  height: 21px;
+  padding: 20px 0 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li {
+  float: left;
+  width: 198px;
+  padding: 20px 0;
+  margin: 0 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a {
+  height: 123px;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div {
+  float: left;
+  width: 96px;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div img {
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div span {
+  height: 40px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #333;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div .price {
+  margin-top: 14px;
+}
+
+#main .goods-floor-box .gds-hot-sale ul:last-child li {
+  border: 0;
+}

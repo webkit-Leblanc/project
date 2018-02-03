@@ -107,8 +107,6 @@
 
 				$ul.html(html);
 				$this.append($ul);
-				console.log(opt)
-
 				if(opt.page){
 					var $pgdiv=$('<div/>').addClass('page');   
 					if(opt.marquee){

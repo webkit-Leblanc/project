@@ -2,7 +2,7 @@ var gulp=require('gulp');
 var sass=require('gulp-sass');
 gulp.task('translateSass',function(){
     gulp.src('./src/sass/*.scss')
-    .pipe(sass())
+    .pipe(sass({outputStyle:'expanded'}).on('error', sass.logError))
     .pipe(gulp.dest('./src/css/'))       
 })
 /*监听文件修改*/

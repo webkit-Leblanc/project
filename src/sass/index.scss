@@ -1,2 +1,209 @@
-h1{background: #ddd;}
-h2{font-size:12px;}
+#banner {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+#banner .carousel-box {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1920px;
+  height: 450px;
+}
+/* 继承样式 */
+%h3{
+    display:inline-block;
+    line-height:24px;
+    font-size: 24px;
+    color:#333;
+    margin-bottom:18px;
+}
+%span{
+    display:inline-block;
+    margin-left:10px;
+    font-size:14px;
+    color:#999;
+}
+%h4{
+
+}
+#main{
+    background:#f9f9f9;
+    .special-box{
+        width:1200px;
+        margin:0 auto;
+        margin-top: 30px;
+        a{
+            float:left;
+            display:block;
+            width:292px;
+            margin-right:8px;
+            // img{
+            //     width:292px;
+            //     height:248px;
+            // }
+        }
+    }
+    .hot-recommend-box{
+        margin-top:30px;
+        h3{
+           @extend %h3;
+        }
+        span{
+            @extend %span;
+        }
+        .hot-recommend-pic{
+            a{
+                display:block;
+                float:left;
+                width: 240px;
+                height: 260px;
+                border-left:1px solid #ddd;
+                &:first-child{
+                    border-left:0;
+                }
+                img{
+                    width: 240px;
+                    height: 260px;  
+                }
+            }
+        }
+    }
+    .adver-middle{
+        margin-top:20px;
+        a{
+            display:block;
+            width:1200px;
+                height:90px;
+            img{
+                width:1200px;
+                height:90px;
+            }
+        }
+    }
+    .goods-floor-box{
+        margin-top:40px;
+        .gds-title{
+            h3{
+                 @extend %h3;
+            }
+            span{
+                @extend %span;
+            }
+            a{
+                display:inline-block;
+                padding:0 10px;
+                font-size:14px;
+                height:14px;
+                /* 去除多余高度 */
+                line-height:12px;
+                color:#666;
+                border-right:1px solid #666;
+                &:last-child{
+                    border:0;
+                }
+            }
+        }
+        .gds-big-pic{
+            float:left;
+            a{
+                display:block;
+                img{
+                    width:360px;
+                    height:376px;
+                }
+            }
+            p{  
+                // display:inline-block;
+                width:100%;
+                height:70px;
+                text-align:center;
+                // padding-left:30px;
+                background:#7f6fd9;
+                padding-top:20px;
+                a{
+                    display:inline-block;
+                    padding:0 10px;
+                    height:30px;
+                    line-height:28px;
+                    font-size:12px;
+                    color:#fff;
+                    border:1px solid #fff;
+
+                }
+            }
+        }
+        .gds-small-pic{
+            float:left;
+            ul{
+                width:602px;
+                li{
+                    float:left;
+                    border-right:1px solid #ddd;
+                    border-bottom:1px solid #ddd;
+                    width:300px;
+                    height:223px;
+                    img{
+                        // display:inline-block;
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
+        }
+        .gds-hot-sale{
+            background:#fff;
+            height:446px;
+            h4{
+                display:block;
+                height:21px;
+                padding:20px 0 0 20px;
+                font-size:16px;
+                font-weight:600;
+                color:#333;
+            }
+            ul{
+                li{
+                    float:left;
+                    width:198px;
+                    padding:20px 0;
+                    margin:0 20px;
+                    border-bottom:1px solid #ddd;
+                    a{
+                        height:123px;
+                        div{
+                            float:left;
+                            width:96px;
+                            img{
+                                width:80px;
+                                height:80px;
+                                float:left;
+                            }
+                            span{
+                                height:40px;
+                                line-height:20px;
+                                font-size:12px;
+                                color:#333;
+                            }
+                            .price{
+                                margin-top:14px;
+                            }
+                        } 
+
+                    }
+                }
+                &:last-child li{
+                    border:0;
+                }
+            }
+        }
+        .hot-brand{
+            h4{
+                @extend %h4;
+            }
+        }
+
+    }
+
+}

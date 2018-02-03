@@ -1,0 +1,16 @@
+[
+    {
+        "id": "g01",
+        "imgurl": "img/160.jpg",
+        "title": "玫瑰金手提包",
+        "price": 100,
+        "qty": 1
+    },
+    {
+        "id": "g02",
+        "imgurl": "img/161.jpg",
+        "title": "电脑包",
+        "price": 200,
+        "qty": 1
+    }
+]

@@ -2,7 +2,7 @@
   "dependencies": {
     "browser-sync": "^2.23.6"
   },
-  "name": "project",
+  "name": "project2",
   "version": "1.0.0",
   "description": "百洋商城",
   "main": "gulpfile.js",
@@ -15,5 +15,13 @@
     "node.js"
   ],
   "author": "Leblanc",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webkit-Leblanc/project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webkit-Leblanc/project/issues"
+  },
+  "homepage": "https://github.com/webkit-Leblanc/project#readme"
 }
