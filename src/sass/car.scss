@@ -1,0 +1,243 @@
+.active{
+    color:#ef3c79;
+    border-bottom:2px solid #ef3c79;
+}
+#car-main{
+    .container{
+        .car-top{
+            height:88px;
+            position:relative;
+            div{
+                display:inline-block;
+                float:left;
+                font-size:18px;
+                line-height:18px;
+                // margin-top:50px;
+                // padding-bottom:17px;
+                // margin:50px 20px 0 20px;
+                height:46px;
+                margin-top:40px;
+                padding:0 20px;
+                line-height:40px;
+            }
+            .car-step{
+                position:absolute;
+                float:right;
+                top:-10px;
+                right:0;
+                width:537px;
+                height:40px;
+                background:url(../img/shopping_step.png) 0 0;
+            }
+        }
+        .car-list{
+            ul.car-title{
+                line-height:50px;
+                height:50px;
+                background-color:#eee;
+                color:#333;
+                border:1px solid #ddd;
+                &>li{
+                    float:left;
+                    line-height:50px;
+                    font-size:14px;
+                    &.t-1{
+                        padding-left:18px;
+                        width:160px;
+                        vertical-align:middle;
+                        input{
+                            margin-right:10px;
+                        }
+                    }
+                    &.t-2{
+                        padding-left:26px;
+                        width:230px;  
+                    }
+                    &.t-3{
+                        padding-left:26px;
+                        width:194px; 
+                    }
+                    &.t-4{
+                        padding-left:26px;
+                        width:160px;    
+                    }
+                    &.t-5{
+                        padding-left:26px;
+                        width:144px;    
+                    }
+                    &.t-6{
+                        padding-left:26px;
+                        width:164px;    
+                    }
+                    &.t-7{
+                        padding-left:26px;
+                        width:146px;    
+                    }
+                }
+            }
+            ul.gdlist{
+                background-color: #fff9f2;
+                li{
+                    padding:20px 0;
+                    height:120px;
+                    color:#333;
+                    border-bottom:1px solid #ddd;
+                    border-left:1px solid #ddd;
+                    label{
+                        width:60px;
+                        display:inline-block;
+                        float:left;
+                        height:119px;
+                        position:relative;
+                        left:0;
+                        top:0;
+                        height:100px;
+                        input{
+                            position:absolute;
+                            left:19px;
+                            top:31px;
+                        }
+                    }
+                    .gdpic{
+                        width:78px;
+                        height:78px;
+                        margin-right:22px;
+                        border:1px solid #ddd;
+                        img{
+                            display:inline-block;
+                            width:100%;
+                            height:100%;
+                        }
+                    }
+                    .name{
+                        width:230px;
+                        margin-top:4px;
+                        a{color:#000;}
+                    }
+                    .rule{
+                        width:194px;
+                        margin-top:4px;
+                        p{color:#999;}
+                    }
+                    .price{
+                        width:160px;
+                        margin-top:4px;
+                        padding-left:23px;
+                        p{color:#000;}
+                        p:first-child{font-size:13px;}
+                    }
+                    .changenum{
+                        width:144px;
+                        margin-top:4px;
+                        p{
+                            cursor:pointer;
+                            a{
+                                float:left;
+                                display:inline-block;
+                                width:24px;
+                                height:24px;
+                                line-height:20px;
+                                border:1px solid #ddd;
+                                text-align:center;
+                                color:#333;
+                                background-color:#fff;
+                            }
+                            input{
+                                float:left;
+                                display:inline-block;
+                                width:50px;
+                                height:24px;
+                                line-height:22px;
+                                border:0;
+                                border-top:1px solid #ddd;
+                                border-bottom:1px solid #ddd;
+                                text-align:center;
+                                font-size:12px;
+                                color:#333;
+                            }
+                        }
+                    }
+                    .onlysum{
+                        width:164px;
+                        margin-top:4px;
+                        padding-left:21px;
+                        p{
+                            color:#000;
+                            font-size:14px;
+                        }
+                    }
+                    .more{
+                        margin-left:20px;
+                        a{
+                            display:block;
+                            color:#666;
+                            cursor:pointer;
+                            &:first-child{
+                                margin-bottom:6px;
+                            }
+                            &:hover{
+                                color:#ef3c79;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .car-sub{
+            margin-top:20px;
+            line-height:58px;
+            height:58px;
+            border:1px solid #ddd;
+            .list-action{
+                padding-left:18px;
+                width:300px;
+                color:#333;
+                font-size:12px;
+                cursor:pointer;
+                a{
+                    color:#000;
+                    padding:0 10px;
+                    font-size:14px;
+                    &:hover{
+                        color:#ef3c79;
+                    }
+                }
+            }
+            .car-info{
+                margin-top:7px;
+                padding-left:600px;
+                text-align:right;
+                color:#999;
+                // width:300px;
+                p{  
+                    display:block;
+                    height:23px;
+                    line-height:0;
+                    span{
+                        color:#999;
+                        height:23px;
+                        line-height:23px;
+                        cursor:default;
+                        font-size:14px;
+                        &:last-child{color:#000;}
+                        b{margin:0 5px;color:#ef3c79;}
+                        em{font-style:normal;color:#ef3c79;margin:0 4px;}
+                        i{font-style:normal;color:#000;}
+                    }
+                }
+            }
+            button.account-all{
+                width:120px;
+                height:58px;
+                background:#ef3c79;
+                text-align:center;
+                color:#fff;
+                border:0;
+                font-size:20px;
+                font-weight:500;
+            }
+        }
+
+    }
+}

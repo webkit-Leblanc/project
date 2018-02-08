@@ -1,0 +1,253 @@
+#good-content .container .gds-desc .newenjoy label, #good-content .container .gds-desc .send label, #good-content .container .gds-desc .size label, #good-content .container .gds-desc .count-box label {
+  margin-right: 20px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #888;
+}
+
+#good-content .container {
+  position: relative;
+}
+
+#good-content .container .belong-tab {
+  margin: 20px 0;
+  line-height: 24px;
+  height: 24px;
+}
+
+#good-content .container .belong-tab .liandong {
+  position: relative;
+  display: inline-block;
+  padding: 0 24px 0 6px;
+  height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#good-content .container .belong-tab .liandong label {
+  line-height: 24px;
+  font-size: 14px;
+}
+
+#good-content .container .belong-tab span {
+  font-size: 14px;
+}
+
+#good-content .container .gds-left {
+  width: 350px;
+}
+
+#good-content .container .gds-desc {
+  width: 584px;
+  height: 420px;
+  margin: 0 18px;
+}
+
+#good-content .container .gds-desc h1 {
+  font-size: 18px;
+  line-height: 28px;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+#good-content .container .gds-desc h1 + p {
+  line-height: 28px;
+  color: #666;
+}
+
+#good-content .container .gds-desc .gdsPrice {
+  background: url(../img/goods_bg.jpg);
+  position: relative;
+  padding: 14px 10px;
+  font-size: 12px;
+  overflow-y: hidden;
+  z-index: 2;
+}
+
+#good-content .container .gds-desc .gdsPrice label {
+  margin-right: 13px;
+  color: #888;
+}
+
+#good-content .container .gds-desc .gdsPrice span.newprice {
+  margin-right: 20px;
+  font-size: 20px;
+  color: #ef3c79;
+}
+
+#good-content .container .gds-desc .gdsPrice span.newprice b {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+#good-content .container .gds-desc .gdsPrice span.oldprice {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #999;
+}
+
+#good-content .container .gds-desc .newenjoy {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+#good-content .container .gds-desc .newenjoy a {
+  display: inline-block;
+  width: 490px;
+  min-height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #ef3c79;
+}
+
+#good-content .container .gds-desc .send {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+#good-content .container .gds-desc .send p {
+  display: inline-block;
+}
+
+#good-content .container .gds-desc .send p .nowwhere {
+  padding: 2px 8px;
+  height: 24px;
+  line-height: 24px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+#good-content .container .gds-desc .send p .yunfei {
+  color: #ef3c79;
+}
+
+#good-content .container .gds-desc .size {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+#good-content .container .gds-desc .size span {
+  display: inline-block;
+  margin: 5px 8px 5px 0;
+  padding: 0 8px;
+  line-height: 28px;
+  border: 1px solid #ef3c79;
+}
+
+#good-content .container .gds-desc .count-box {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+#good-content .container .gds-desc .count-box p {
+  display: inline-block;
+  margin-top: 6px;
+  margin-left: 2px;
+}
+
+#good-content .container .gds-desc .count-box i {
+  font-style: normal;
+  float: left;
+  display: inline-block;
+  width: 24px;
+  height: 28px;
+  text-align: center;
+  line-height: 25px;
+  border: 1px solid #ddd;
+  color: #999;
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+
+#good-content .container .gds-desc .count-box input {
+  float: left;
+  display: inline-block;
+  width: 44px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+#good-content .container .gds-desc .buy_add {
+  margin-top: 10px;
+  padding: 0 10px;
+  text-align: center;
+  padding: 34px 0;
+}
+
+#good-content .container .gds-desc .buy_add p {
+  display: inline-block;
+  height: 40px;
+}
+
+#good-content .container .gds-desc .buy_add p a {
+  height: 40px;
+  display: inline-block;
+  padding: 0 23px;
+  line-height: 40px;
+  font-size: 16px;
+  border: 1px solid #ef3c79;
+  border-radius: 4px;
+  text-align: center;
+  background: #ef3c79;
+  color: #fff;
+}
+
+#good-content .container .gds-desc .buy_add p a:first-child {
+  margin-right: 10px;
+}
+
+#good-content .goods {
+  width: 350px;
+  height: 350px;
+}
+
+.gds-zoom-big img {
+  width: 1000px;
+}
+
+#good-content .gds-zoom-big {
+  left: 366.5px;
+  top: 44px;
+}
+
+#good-content .smalllist {
+  float: left;
+  margin: 5px auto;
+  width: 350px;
+  height: 60px;
+  text-align: center;
+  position: relative;
+}
+
+#good-content .smalllist .imgbox {
+  width: 315px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#good-content .smalllist .imgbox img {
+  display: inline-block;
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: 3px;
+}
+
+#good-content .smalllist .imgbox img:hover {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ef3b78;
+}

@@ -1,27 +1,39 @@
 define(function(){
     return{
-        /*
-         * [生成一个范围内的随机整数]
-         * @param  {Number} min [范围最小值]
-         * @param  {Number} max [范围内最大值]
-         * @return {Number}     [返回随机整数]
-         */
-        randomNumber(min,max){
-            return parseInt(Math.random()*(max-min+1)) + min
-        },
-        vCode(){
-            var res = '';
-            for(var i=0;i<4;i++){
-                res += parseInt(Math.random()*10);//'' + 8=>'8'+6=>'86'+5=>'865'+0=>'8650'
+        /*search部分吸顶效果*/
+        ceiling($){
+            var $xiding=$('#search');
+            // $xiding[0].style.boxShadow="0 0 10px #ccc";
+            // $xiding.slideUp();
+            $xiding.css({
+                zIndex:2,
+                background:'#fff'
+            });
+            window.onscroll=function(){
+                if(window.scrollY>=800){
+                    // $xiding.slideDown();
+                    $xiding.addClass('fix');
+                }else{
+                    // $xiding.slideUp();
+                    $xiding.removeClass('fix');
+                }
             }
-            return res;
         },
-        randomColor(){
-            // 随机r,g,b
-            var r = parseInt(Math.random()*256);
-            var g = parseInt(Math.random()*256);
-            var b = parseInt(Math.random()*256);
-            return 'rgb(' + r + ',' + g + ',' + b + ')';
+        /* 返回顶部效果*/
+        toTop($){
+            var $top=$('#side-tab').find('.toTop');
+            $top.on('click',function(){
+                var timer=setInterval(function(){
+                var scrollDistance=window.scrollY;
+                var speed=parseInt(scrollDistance/10);
+                if(scrollDistance==0||speed==0){
+                    clearInterval(timer);
+                    window.scrollTo(0,0);
+                }
+                window.scrollBy(0, -speed);
+                },20);
+            })
         }
     }
 });
+

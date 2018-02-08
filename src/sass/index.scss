@@ -26,7 +26,12 @@
     color:#999;
 }
 %h4{
-
+    display:block;
+    height:21px;
+    margin:20px 0 0 20px;
+    font-size:16px;
+    font-weight:600;
+    color:#333;
 }
 #main{
     background:#f9f9f9;
@@ -83,10 +88,13 @@
         }
     }
     .goods-floor-box{
+        background:#fff;
         margin-top:40px;
         .gds-title{
+            background:#f9f9f9;
             h3{
                  @extend %h3;
+                 cursor: default;
             }
             span{
                 @extend %span;
@@ -102,6 +110,9 @@
                 border-right:1px solid #666;
                 &:last-child{
                     border:0;
+                }
+                &:hover{
+                    color:#ef3c79;
                 }
             }
         }
@@ -130,20 +141,34 @@
                     font-size:12px;
                     color:#fff;
                     border:1px solid #fff;
-
+                    margin-right:7px;
+                    cursor:pointer;
+                    &:last-child{
+                        margin-right:0;
+                    }
+                    &:hover{
+                        background:#fff;
+                        color:#000;
+                    }
                 }
             }
         }
         .gds-small-pic{
             float:left;
             ul{
-                width:602px;
+                width:600px;
+                box-sizing:content-box;
                 li{
                     float:left;
                     border-right:1px solid #ddd;
                     border-bottom:1px solid #ddd;
-                    width:300px;
-                    height:223px;
+                    width:299px;
+                    height:222px;
+                    box-sizing:content-box;
+                    // &:nth-child(2n){
+                    //     border-right:0;
+                    //     box-sizing:content-box;
+                    // }
                     img{
                         // display:inline-block;
                         width:100%;
@@ -153,15 +178,11 @@
             }
         }
         .gds-hot-sale{
-            background:#fff;
+            padding:0;
             height:446px;
+            border-bottom:1px solid #ddd;
             h4{
-                display:block;
-                height:21px;
-                padding:20px 0 0 20px;
-                font-size:16px;
-                font-weight:600;
-                color:#333;
+               @extend %h4;
             }
             ul{
                 li{
@@ -171,10 +192,17 @@
                     margin:0 20px;
                     border-bottom:1px solid #ddd;
                     a{
-                        height:123px;
+                        display:block;
+                        height:87px;
                         div{
                             float:left;
-                            width:96px;
+                            width:80px;
+                            &:nth-of-type(2){
+                                width:118px;
+                                padding-left:10px;
+                                overflow:hidden;
+                                text-overflow:ellipsis;
+                            }
                             img{
                                 width:80px;
                                 height:80px;
@@ -185,9 +213,34 @@
                                 line-height:20px;
                                 font-size:12px;
                                 color:#333;
+                                width:108px;
+                                // word-wrap:break-word;
+                                &:hover{
+                                    color:#ef3c79;
+                                    text-decoration:underline;
+                                }
                             }
                             .price{
                                 margin-top:14px;
+                                width:118px;
+                                color:#ef3c79;
+                                p{
+                                    display:inline-block;
+                                    color:#ef3c79;
+                                    .new-price{
+                                        line-height:16px;
+                                        font-size:14px;
+                                        font-weight:500;
+                                        color:#ef3c79;
+                                        font-style:normal;
+                                    }
+                                }
+                                del{
+                                    margin-left:5px;
+                                    line-height:14px;
+                                    font-size:12px;
+                                    color:#999;
+                                }
                             }
                         } 
 
@@ -200,10 +253,36 @@
         }
         .hot-brand{
             h4{
-                @extend %h4;
+                float:left;
+                width:136px;
+                height:110px;
+                line-height:110px;
+                font-size:16px;
+                color:#333;
+                font-weight:600;
+                text-align:center;
+            }
+            a{
+                display:block;
+                float:left;
+                width:133px;
+                height:110px;
+                position:relative;
+                &:after{
+                    position:absolute;
+                    content: "";
+                    width:1px;
+                    height:52px;
+                    background: #ccc;
+                    top:30px;
+                    right:-1px;
+                    z-index:1;
+                }
+            }
+            a:last-child:after{
+                width:0;
             }
         }
 
     }
-
 }

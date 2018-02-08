@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>注册百洋会员</title>
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/login_reg.css" />
+    <script src="../js/require.js" data-main="../js/login_reg.js"></script>
+</head>
+<body>
+    <div id="l-top">    
+    </div>
+    <div id="reg-main"> 
+        <div class="reg-main clearfix container same">
+            <img src="../img/loginpic.jpg"/>
+            <form action="#">
+                <div class="login-input fl">
+                    <div class="title clearfix">
+                        <div>注册百洋会员</div>
+                        <span>已有账号,立即<a href="#">登录</a></span>
+                        <div class="tips">提示信息</div>
+                    </div>
+                    <div class="inp-box">
+                        <label>
+                            <i class="icon-user"></i>
+                            <input type="text" placeholder="请输入你的手机号/邮箱" id="regname" name="usename"/>
+                            <span class="gou em_tel"></span>
+                        </label>
+                    </div>
+                    <div class="inp-box">
+                        <label>
+                            <i class="icon-psw"></i>
+                            <input type="password" placeholder="请输入你的密码" id="psw1" name="psw"/>
+                            <span class="qiangdu">密码强度</span>
+                            <!-- <span class="gou"></span> -->
+                        </label>
+                    </div>
+                    <div class="inp-box">
+                        <i class="icon-psw"></i>
+                        <input type="password" placeholder="确认你的密码" id="psw2" name="psw"/>
+                        <span class="gou surecode"></span>
+                    </div>
+                    <div class="verify clearfix">
+                        <input type="text" id="vCode" placeholder="验证码"/>
+                        <div class="code" id="sCode"></div>
+                        <span class="gou"></span>
+                    </div>
+                    <div class="else clearfix">
+                        <label class="fl">
+                            <input type="checkbox" value="0" class="ckbox"/>我阅读并同意
+                            <a href="#" class="agreement">《百洋商城服务协议》</a>
+                        </label>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="注册" id="refer"/>
+                    </div>
+                </div>
+            </form>   
+        </div> 
+    </div>
+    <div id="l-bottom">  
+    </div>
+    
+</body>
+</html>

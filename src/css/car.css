@@ -1,0 +1,299 @@
+.active {
+  color: #ef3c79;
+  border-bottom: 2px solid #ef3c79;
+}
+
+#car-main .container .car-top {
+  height: 88px;
+  position: relative;
+}
+
+#car-main .container .car-top div {
+  display: inline-block;
+  float: left;
+  font-size: 18px;
+  line-height: 18px;
+  height: 46px;
+  margin-top: 40px;
+  padding: 0 20px;
+  line-height: 40px;
+}
+
+#car-main .container .car-top .car-step {
+  position: absolute;
+  float: right;
+  top: -10px;
+  right: 0;
+  width: 537px;
+  height: 40px;
+  background: url(../img/shopping_step.png) 0 0;
+}
+
+#car-main .container .car-list ul.car-title {
+  line-height: 50px;
+  height: 50px;
+  background-color: #eee;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+#car-main .container .car-list ul.car-title > li {
+  float: left;
+  line-height: 50px;
+  font-size: 14px;
+}
+
+#car-main .container .car-list ul.car-title > li.t-1 {
+  padding-left: 18px;
+  width: 160px;
+  vertical-align: middle;
+}
+
+#car-main .container .car-list ul.car-title > li.t-1 input {
+  margin-right: 10px;
+}
+
+#car-main .container .car-list ul.car-title > li.t-2 {
+  padding-left: 26px;
+  width: 230px;
+}
+
+#car-main .container .car-list ul.car-title > li.t-3 {
+  padding-left: 26px;
+  width: 194px;
+}
+
+#car-main .container .car-list ul.car-title > li.t-4 {
+  padding-left: 26px;
+  width: 160px;
+}
+
+#car-main .container .car-list ul.car-title > li.t-5 {
+  padding-left: 26px;
+  width: 144px;
+}
+
+#car-main .container .car-list ul.car-title > li.t-6 {
+  padding-left: 26px;
+  width: 164px;
+}
+
+#car-main .container .car-list ul.car-title > li.t-7 {
+  padding-left: 26px;
+  width: 146px;
+}
+
+#car-main .container .car-list ul.gdlist {
+  background-color: #fff9f2;
+}
+
+#car-main .container .car-list ul.gdlist li {
+  padding: 20px 0;
+  height: 120px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+#car-main .container .car-list ul.gdlist li label {
+  width: 60px;
+  display: inline-block;
+  float: left;
+  height: 119px;
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100px;
+}
+
+#car-main .container .car-list ul.gdlist li label input {
+  position: absolute;
+  left: 19px;
+  top: 31px;
+}
+
+#car-main .container .car-list ul.gdlist li .gdpic {
+  width: 78px;
+  height: 78px;
+  margin-right: 22px;
+  border: 1px solid #ddd;
+}
+
+#car-main .container .car-list ul.gdlist li .gdpic img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+#car-main .container .car-list ul.gdlist li .name {
+  width: 230px;
+  margin-top: 4px;
+}
+
+#car-main .container .car-list ul.gdlist li .name a {
+  color: #000;
+}
+
+#car-main .container .car-list ul.gdlist li .rule {
+  width: 194px;
+  margin-top: 4px;
+}
+
+#car-main .container .car-list ul.gdlist li .rule p {
+  color: #999;
+}
+
+#car-main .container .car-list ul.gdlist li .price {
+  width: 160px;
+  margin-top: 4px;
+  padding-left: 23px;
+}
+
+#car-main .container .car-list ul.gdlist li .price p {
+  color: #000;
+}
+
+#car-main .container .car-list ul.gdlist li .price p:first-child {
+  font-size: 13px;
+}
+
+#car-main .container .car-list ul.gdlist li .changenum {
+  width: 144px;
+  margin-top: 4px;
+}
+
+#car-main .container .car-list ul.gdlist li .changenum p {
+  cursor: pointer;
+}
+
+#car-main .container .car-list ul.gdlist li .changenum p a {
+  float: left;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 20px;
+  border: 1px solid #ddd;
+  text-align: center;
+  color: #333;
+  background-color: #fff;
+}
+
+#car-main .container .car-list ul.gdlist li .changenum p input {
+  float: left;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  line-height: 22px;
+  border: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+}
+
+#car-main .container .car-list ul.gdlist li .onlysum {
+  width: 164px;
+  margin-top: 4px;
+  padding-left: 21px;
+}
+
+#car-main .container .car-list ul.gdlist li .onlysum p {
+  color: #000;
+  font-size: 14px;
+}
+
+#car-main .container .car-list ul.gdlist li .more {
+  margin-left: 20px;
+}
+
+#car-main .container .car-list ul.gdlist li .more a {
+  display: block;
+  color: #666;
+  cursor: pointer;
+}
+
+#car-main .container .car-list ul.gdlist li .more a:first-child {
+  margin-bottom: 6px;
+}
+
+#car-main .container .car-list ul.gdlist li .more a:hover {
+  color: #ef3c79;
+}
+
+#car-main .container .car-sub {
+  margin-top: 20px;
+  line-height: 58px;
+  height: 58px;
+  border: 1px solid #ddd;
+}
+
+#car-main .container .car-sub .list-action {
+  padding-left: 18px;
+  width: 300px;
+  color: #333;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#car-main .container .car-sub .list-action a {
+  color: #000;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+#car-main .container .car-sub .list-action a:hover {
+  color: #ef3c79;
+}
+
+#car-main .container .car-sub .car-info {
+  margin-top: 7px;
+  padding-left: 600px;
+  text-align: right;
+  color: #999;
+}
+
+#car-main .container .car-sub .car-info p {
+  display: block;
+  height: 23px;
+  line-height: 0;
+}
+
+#car-main .container .car-sub .car-info p span {
+  color: #999;
+  height: 23px;
+  line-height: 23px;
+  cursor: default;
+  font-size: 14px;
+}
+
+#car-main .container .car-sub .car-info p span:last-child {
+  color: #000;
+}
+
+#car-main .container .car-sub .car-info p span b {
+  margin: 0 5px;
+  color: #ef3c79;
+}
+
+#car-main .container .car-sub .car-info p span em {
+  font-style: normal;
+  color: #ef3c79;
+  margin: 0 4px;
+}
+
+#car-main .container .car-sub .car-info p span i {
+  font-style: normal;
+  color: #000;
+}
+
+#car-main .container .car-sub button.account-all {
+  width: 120px;
+  height: 58px;
+  background: #ef3c79;
+  text-align: center;
+  color: #fff;
+  border: 0;
+  font-size: 20px;
+  font-weight: 500;
+}

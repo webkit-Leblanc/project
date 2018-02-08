@@ -5,7 +5,7 @@
             width:400,
             height:300,
             // 显示位置
-            position:'right',
+            // position:'right',
             // 小图与大图的间距
             gap:15
         }
@@ -24,32 +24,31 @@
                     width:opt.width,
                     height:opt.height
                 })
-                console.log($big)
-                $big.appendTo($('body'));
+                $big.appendTo($small.parent());
 
                 // 创建大图片
                 var $bigImg=$('<img/>').attr('src',$smallImg.attr('data-big')||$smallImg.attr('src'));
                 $bigImg.appendTo($big);
 
                 // $big大图的位置
-                var bleft,btop;
-                if(opt.position === 'right'){
-                    bleft = $small.offset().left + $small.outerWidth() + opt.gap;
-                    btop = $small.offset().top;
-                }else if(opt.position === 'left'){
-                    bleft = $small.offset().left - opt.width - opt.gap;
-                    btop = $small.offset().top;
-                }else if(opt.position === 'top'){
-                    bleft = $small.offset().left;
-                    btop = $small.offset().top - opt.height - opt.gap;
-                }else if(opt.position === 'bottom'){
-                    bleft = $small.offset().left;
-                    btop = $small.offset().top + $small.outerHeight() + opt.gap;
-                } 
-                $big.css({
-                    left:bleft,
-                    top:btop
-                })
+                // var bleft,btop;
+                // if(opt.position === 'right'){
+                //     bleft = $small.offset().left + $small.outerWidth() + opt.gap;
+                //     btop = $small.offset().top;
+                // }else if(opt.position === 'left'){
+                //     bleft = $small.offset().left - opt.width - opt.gap;
+                //     btop = $small.offset().top;
+                // }else if(opt.position === 'top'){
+                //     bleft = $small.offset().left;
+                //     btop = $small.offset().top - opt.height - opt.gap;
+                // }else if(opt.position === 'bottom'){
+                //     bleft = $small.offset().left;
+                //     btop = $small.offset().top + $small.outerHeight() + opt.gap;
+                // } 
+                // $big.css({
+                //     left:bleft,
+                //     top:btop
+                // })
 
                 // 创建小放大镜
                 var $minzoom = $('<span/>').addClass('minzoom');

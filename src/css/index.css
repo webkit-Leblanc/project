@@ -29,6 +29,15 @@
   color: #999;
 }
 
+#main .goods-floor-box .gds-hot-sale h4 {
+  display: block;
+  height: 21px;
+  margin: 20px 0 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
 #main {
   background: #f9f9f9;
 }
@@ -83,7 +92,16 @@
 }
 
 #main .goods-floor-box {
+  background: #fff;
   margin-top: 40px;
+}
+
+#main .goods-floor-box .gds-title {
+  background: #f9f9f9;
+}
+
+#main .goods-floor-box .gds-title h3 {
+  cursor: default;
 }
 
 #main .goods-floor-box .gds-title a {
@@ -99,6 +117,10 @@
 
 #main .goods-floor-box .gds-title a:last-child {
   border: 0;
+}
+
+#main .goods-floor-box .gds-title a:hover {
+  color: #ef3c79;
 }
 
 #main .goods-floor-box .gds-big-pic {
@@ -130,6 +152,17 @@
   font-size: 12px;
   color: #fff;
   border: 1px solid #fff;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+#main .goods-floor-box .gds-big-pic p a:last-child {
+  margin-right: 0;
+}
+
+#main .goods-floor-box .gds-big-pic p a:hover {
+  background: #fff;
+  color: #000;
 }
 
 #main .goods-floor-box .gds-small-pic {
@@ -137,15 +170,17 @@
 }
 
 #main .goods-floor-box .gds-small-pic ul {
-  width: 602px;
+  width: 600px;
+  box-sizing: content-box;
 }
 
 #main .goods-floor-box .gds-small-pic ul li {
   float: left;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  width: 300px;
-  height: 223px;
+  width: 299px;
+  height: 222px;
+  box-sizing: content-box;
 }
 
 #main .goods-floor-box .gds-small-pic ul li img {
@@ -154,17 +189,9 @@
 }
 
 #main .goods-floor-box .gds-hot-sale {
-  background: #fff;
+  padding: 0;
   height: 446px;
-}
-
-#main .goods-floor-box .gds-hot-sale h4 {
-  display: block;
-  height: 21px;
-  padding: 20px 0 0 20px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
+  border-bottom: 1px solid #ddd;
 }
 
 #main .goods-floor-box .gds-hot-sale ul li {
@@ -176,12 +203,20 @@
 }
 
 #main .goods-floor-box .gds-hot-sale ul li a {
-  height: 123px;
+  display: block;
+  height: 87px;
 }
 
 #main .goods-floor-box .gds-hot-sale ul li a div {
   float: left;
-  width: 96px;
+  width: 80px;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div:nth-of-type(2) {
+  width: 118px;
+  padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #main .goods-floor-box .gds-hot-sale ul li a div img {
@@ -195,12 +230,74 @@
   line-height: 20px;
   font-size: 12px;
   color: #333;
+  width: 108px;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div span:hover {
+  color: #ef3c79;
+  text-decoration: underline;
 }
 
 #main .goods-floor-box .gds-hot-sale ul li a div .price {
   margin-top: 14px;
+  width: 118px;
+  color: #ef3c79;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div .price p {
+  display: inline-block;
+  color: #ef3c79;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div .price p .new-price {
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ef3c79;
+  font-style: normal;
+}
+
+#main .goods-floor-box .gds-hot-sale ul li a div .price del {
+  margin-left: 5px;
+  line-height: 14px;
+  font-size: 12px;
+  color: #999;
 }
 
 #main .goods-floor-box .gds-hot-sale ul:last-child li {
   border: 0;
+}
+
+#main .goods-floor-box .hot-brand h4 {
+  float: left;
+  width: 136px;
+  height: 110px;
+  line-height: 110px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+#main .goods-floor-box .hot-brand a {
+  display: block;
+  float: left;
+  width: 133px;
+  height: 110px;
+  position: relative;
+}
+
+#main .goods-floor-box .hot-brand a:after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 52px;
+  background: #ccc;
+  top: 30px;
+  right: -1px;
+  z-index: 1;
+}
+
+#main .goods-floor-box .hot-brand a:last-child:after {
+  width: 0;
 }

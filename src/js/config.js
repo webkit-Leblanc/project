@@ -8,6 +8,8 @@ require.config({
    /* 设置好依赖*/
    shim:{
         'keCarousel':['jquery'],
-        'gdsZoom':['jquery']
+        'gdsZoom':['jquery'],
+        'define_self':['jquery']
    }
 });
+
