@@ -5,6 +5,7 @@
     color:#888;
 }
 #good-content{
+    height:520px;
     .container{
         position:relative;
         .belong-tab{
@@ -182,6 +183,7 @@
                         text-align:center;
                         background:#ef3c79;
                         color:#fff;
+                        cursor:pointer;
                         &:first-child{
                             margin-right:10px;
                         }

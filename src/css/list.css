@@ -167,6 +167,12 @@
   display: inline-block;
   width: 47px;
   text-align: center;
+  cursor: pointer;
+}
+
+#mylist .product-list .list-top .page a:nth-of-type(1) {
+  font-size: 13px;
+  text-decoration: underline;
 }
 
 #mylist .product-list .list-top .page a:nth-of-type(1), #mylist .product-list .list-top .page a:nth-of-type(2) {

@@ -1,12 +1,46 @@
 require(['config'],function(){
     require(['jquery','define_self','common'],function($,define){
-        $('#header').load('../html/header.html .header'); 
+        $('#header').load('../html/header.html .header',function(){
+            var cookie=document.cookie;
+            var goodList=[];
+            /*截取*/
+            cookie.split('; ').forEach(function(item){
+                var arr=item.split('=');
+                if(arr[0]==='goodList'){
+                    goodList=JSON.parse(arr[1]);  
+                }    
+            })  
+            var $cartnum=$('.cart-num');
+            var carnum=0;
+            goodList.forEach(function(item,idx){
+                carnum+=item.qty*1;                     
+            })    
+            $cartnum[0].innerText=carnum; 
+        }); 
         $('#header').css('backgroundColor','#f6f6f6');
         $('#search').load('../html/header.html .search');
         $('#footer').load('../html/footer.html .footer');
         $('#side-tab').load('../html/header.html .side-tab',function(){
-           /* 返回顶部效果*/
-           define.toTop($);
+            /* 返回顶部效果*/
+            define.toTop($);
+            var cookie=document.cookie;   
+            var goodList=[];
+            /*截取*/
+            cookie.split('; ').forEach(function(item){
+                var arr=item.split('=');
+                if(arr[0]==='goodList'){
+                    goodList=JSON.parse(arr[1]);  
+                }    
+            })  
+            var $carlist=$('.carlist');
+            var carnum=0;
+            goodList.forEach(function(item,idx){
+                carnum+=item.qty*1;                  
+            })    
+            $carlist.find('.car-num')[0].innerText=carnum;
+            // $carlist.on('click',function(){
+            //     location.href="../html/car.html";
+            // })
         });
         function gainCookie(){
             var buyList=[];
@@ -22,6 +56,8 @@ require(['config'],function(){
         gainCookie();
         var $gdlist=$('#car-main').find('.gdlist');
         var $carinfo=$('#car-main').find('.car-info');
+        var $quan1=$('#car-main').find('.quan1');
+        var $quan2=$('#car-main').find('.quan2');
         function render(){
             var buyList=gainCookie();
             var total=0;
@@ -30,9 +66,9 @@ require(['config'],function(){
             var html1='';
             var html2='';
             buyList.forEach(function(item,idx){
-                total+=item.newprice*item.qty;
-                discount+=(item.oldprice-item.newprice)*item.qty;
-                sumqty+=item.qty;
+                total+=item.newprice*item.qty*1;
+                discount+=(item.oldprice-item.newprice)*item.qty*1;
+                sumqty+=item.qty*1;
                 html1+=`<li class="clearfix" data-id=${item.id}>
                                 <label>
                                     <input type="checkbox" />
@@ -47,8 +83,8 @@ require(['config'],function(){
                                     <p>规格:2.5g*180袋</p>
                                 </div>
                                 <div class="price fl">
-                                    <p class=new${item.id}>￥${item.newprice}</p>
-                                    <p><del class=old${item.id}>￥${item.oldprice}</del></p>
+                                    <p class=new${item.id}>￥${item.newprice*1*item.qty}</p>
+                                    <p><del class=old${item.id}>￥${item.oldprice*1*item.qty}</del></p>
                                 </div>
                                 <div class="changenum fl">
                                     <p>
@@ -58,7 +94,7 @@ require(['config'],function(){
                                     </p>
                                 </div>
                                 <div class="onlysum fl">
-                                    <p>￥${item.newprice}</p>
+                                    <p class=only${item.id}>￥${item.newprice*1*item.qty}</p>
                                 </div>
                                 
                                 <div class="more fl">
@@ -67,8 +103,7 @@ require(['config'],function(){
                                 </div>
                             </li>`;    
             })
-            $gdlist.html(html1);  
-            
+            $gdlist.html(html1);
             html2=`<p class="choose-price">
                         <span>已选择<b>${sumqty}</b></span>
                         <span>总价:<em>￥${total}</em></span> 
@@ -98,8 +133,7 @@ require(['config'],function(){
                 }
             }
             console.log(buyList);
-            document.cookie='goodList='+JSON.stringify(buyList);
-            console.log(document.cookie);
+            document.cookie='goodList='+JSON.stringify(buyList)+'; path=/';
             render();
         })
         
@@ -132,8 +166,6 @@ require(['config'],function(){
         $delchoose=$('#car-main').find('.del-choose');
         $delchoose.on('click',function(){
             var $checked=$gdlist.find(':checked');
-            console.log($checked.closest('li').get());
-            // console.log()
             var $yixuan=$checked.closest('li');
             var len=$yixuan.length;
             var arr=[];
@@ -147,46 +179,130 @@ require(['config'],function(){
                 for(var i=0;i<buyList.length;i++){
                     if(buyList[i].id==item.id){
                         buyList.splice(i,1);
-                        document.cookie='goodList='+JSON.stringify(buyList);
+                        document.cookie='goodList='+JSON.stringify(buyList)+'; path=/';
                         render();
                     }
                 }               
             }) 
         })
+
         /*-和+数量*/
+        /*四个固定位置修改的数据*/
+
         $gdlist.on('click','.jian',function(){
             var val=$(this).next().val()*1;
+            // if(val<=1){$(this).next()[0].value=1};
             $(this).next()[0].value=val-1;
-            if(val<=0){$(this).next()[0].value=0};
+            if($(this).next()[0].value<=1){$(this).next()[0].value=1}
             var $currentLi=$(this).closest('li');
             var gdsid=$currentLi.data().id;
-            var buyList=gainCookie();  
-            console.log(buyList) 
+            var buyList=gainCookie();
             /* 获取修改区域*/   
             var $newprice=$(this).parents().find('.new'+gdsid);
             var $oldprice=$(this).parents().find('.old'+gdsid);
-            console.log($newprice);
-            console.log($oldprice);
-            console.log(val)
-                            
+            var $onlysum=$(this).parents().find('.only'+gdsid);
+            var total=0; 
+            var discount=0;
+            var sumprice=0;                        
             for(var i=0;i<buyList.length;i++){
                 if(buyList[i].id==gdsid){
-                    buyList[i].qty--;
-                    console.log(buyList[i])  
-                    console.log(buyList[i].newprice)
-                    console.log($newprice[0].innerText)
-                                 
-                    // $newprice[0].innerText='￥'+(val-1)*buyList[i].newprice*1;     
+                    buyList[i].qty=$(this).next()[0].value*1;
+                    document.cookie='goodList='+JSON.stringify(buyList)+'; path=/';
+                    if(buyList[i].qty<=1){buyList[i].qty=1;}
+                    $newprice[0].innerText='￥'+($(this).next()[0].value*1)*buyList[i].newprice*1;
+                    $oldprice[0].innerText='￥'+($(this).next()[0].value*1)*buyList[i].oldprice*1;
+                    $onlysum[0].innerText='￥'+($(this).next()[0].value*1)*buyList[i].newprice*1;
+                    if(val==0){
+                        $newprice[0].innerText='￥'+0;
+                        $oldprice[0].innerText='￥'+0;
+                        $onlysum[0].innerText='￥'+0;
+                    }
+                    buyList.forEach(function(item,idx){
+                        total+=item.qty*1; 
+                        discount+=(item.oldprice-item.newprice)*item.qty;
+                        sumprice+=item.newprice*item.qty;            
+                    })
+                    console.log(buyList)
+                         
+                    $('#car-main').find('.gnnum')[0].innerText=total;
+                    $('#car-main').find('.choose-price b')[0].innerText=total;
+                    $('#car-main').find('.choose-price em')[0].innerText='￥'+sumprice;
+                    $('#car-main').find('.discount-price i')[0].innerText='￥'+discount;
+                    return;    
                 }
-            } 
-
-
+            }
         })
         $gdlist.on('click','.jia',function(){
             var val=$(this).prev().val()*1;
             $(this).prev()[0].value=val+1;
-            
+            var $currentLi=$(this).closest('li');
+            var gdsid=$currentLi.data().id;
+            var buyList=gainCookie();
+            var total=0; 
+            var discount=0;
+            var sumprice=0;
+            /* 获取修改区域*/   
+            var $newprice=$(this).parents().find('.new'+gdsid);
+            var $oldprice=$(this).parents().find('.old'+gdsid);
+            var $onlysum=$(this).parents().find('.only'+gdsid);
+            for(var i=0;i<buyList.length;i++){
+                if(buyList[i].id==gdsid){ 
+                    buyList[i].qty=val+1;
+                    document.cookie='goodList='+JSON.stringify(buyList)+'; path=/';
+                    $newprice[0].innerText='￥'+(val+1)*buyList[i].newprice*1;
+                    $oldprice[0].innerText='￥'+(val+1)*buyList[i].oldprice*1;
+                    $onlysum[0].innerText='￥'+(val+1)*buyList[i].newprice*1;
+                    console.log(buyList)
+                         
+                    buyList.forEach(function(item,idx){
+                        total+=item.qty*1; 
+                        discount+=(item.oldprice-item.newprice)*item.qty*1;
+                        sumprice+=item.newprice*item.qty*1;            
+                    }) 
+                    console.log(discount)
+                         
+                    $('#car-main').find('.gnnum')[0].innerText=total;
+                    $('#car-main').find('.choose-price b')[0].innerText=total;
+                    $('#car-main').find('.choose-price em')[0].innerText='￥'+sumprice;
+                    $('#car-main').find('.discount-price i')[0].innerText='￥'+discount;
+                    return;  
+                }
+            }
         })
-
+        /*输入框文本改变时候*/
+        $gdlist.on('change','.changenum input',function(){       
+            this.value=this.value;
+            if(this.value<=1){this.value=1;}
+            // this.innerText;
+            var $currentLi=$(this).closest('li');
+            var gdsid=$currentLi.data().id;
+            var buyList=gainCookie();
+            /* 获取修改区域*/   
+            var $newprice=$(this).parents().find('.new'+gdsid);
+            var $oldprice=$(this).parents().find('.old'+gdsid);
+            var $onlysum=$(this).parents().find('.only'+gdsid);
+            var total=0;
+            var discount=0;
+            var sumprice=0;
+            for(var i=0;i<buyList.length;i++){
+                if(buyList[i].id==gdsid){
+                    buyList[i].qty=this.value;
+                    document.cookie='goodList='+JSON.stringify(buyList)+'; path=/';
+                    $newprice[0].innerText='￥'+(this.value*1)*buyList[i].newprice*1;
+                    $oldprice[0].innerText='￥'+(this.value*1)*buyList[i].oldprice*1; 
+                    $onlysum[0].innerText='￥'+(this.value*1)*buyList[i].newprice*1;
+                    buyList.forEach(function(item,idx){
+                        total+=item.qty*1; 
+                        discount+=(item.oldprice-item.newprice)*item.qty*1;
+                        sumprice+=item.newprice*item.qty*1;       
+                    })
+                    $('#car-main').find('.gnnum')[0].innerText=total;
+                    $('#car-main').find('.choose-price b')[0].innerText=total;
+                    $('#car-main').find('.choose-price em')[0].innerText='￥'+sumprice;
+                    $('#car-main').find('.discount-price i')[0].innerText='￥'+discount;
+                    return;   
+                }
+            }              
+        })
     })
 })

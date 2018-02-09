@@ -38,25 +38,35 @@ require(['config'],function(){
                         success:function(data){
                             if(data=='OK'){
                                /* 跳到商品列表页*/
-                                location.href=`html/list.html?keyword=${e.target.innerText}`;
-                                
-
-                            }
-                                 
+                                location.href=`html/list.html?keyword=${e.target.innerText}`;  
+                            }          
                         }
-                    })
-                         
-
-                         
+                    })      
                 }     
             })
-
-
         });
         $('#footer').load('html/footer.html .footer');
         $('#side-tab').load('html/header.html .side-tab',function(){
             /* 返回顶部效果*/
             define.toTop($);
+            var cookie=document.cookie;   
+            var goodList=[];
+            /*截取*/
+            cookie.split('; ').forEach(function(item){
+                var arr=item.split('=');
+                if(arr[0]==='goodList'){
+                    goodList=JSON.parse(arr[1]);  
+                }    
+            })  
+            var $carlist=$('.carlist');
+            var carnum=0;
+            goodList.forEach(function(item,idx){
+                carnum+=item.qty*1;                  
+            })    
+            $carlist.find('.car-num')[0].innerText=carnum;
+            $carlist.on('click',function(){
+                location.href="html/car.html";
+            })
         });
         /* 轮播动画*/
         $('#banner .carousel-box').keCarousel({

@@ -5,6 +5,10 @@
   color: #888;
 }
 
+#good-content {
+  height: 520px;
+}
+
 #good-content .container {
   position: relative;
 }
@@ -201,6 +205,7 @@
   text-align: center;
   background: #ef3c79;
   color: #fff;
+  cursor: pointer;
 }
 
 #good-content .container .gds-desc .buy_add p a:first-child {

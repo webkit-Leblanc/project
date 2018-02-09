@@ -12,12 +12,24 @@
         }
     }
     /*nav跳转之发送数据*/
+    $pageNo=isset($_GET['pageNo']) ? $_GET['pageNo'] : false;
+    $qty=isset($_GET['qty']) ? $_GET['qty'] : false;
     if($gain==true){
         $sql="select * from goodslist where category like '%$keyword%'";
         $res=$conn->query($sql);
         if($res->num_rows>0){
             $row=$res->fetch_all(MYSQL_ASSOC);
-            echo json_encode($row,JSON_UNESCAPED_UNICODE);  
+            // echo json_encode($row,JSON_UNESCAPED_UNICODE); 
+            /*处理这部分数据进行分页 */
+            // var_dump($row);
+            /*新建一个关联数组*/
+            $refer=array(
+                'data'=>array_slice($row,($pageNo-1)*$qty,$qty),
+                'qty'=>$qty*1,
+                'pagenum'=>$pageNo*1,
+                'total'=>count($row)
+                );
+            echo json_encode($refer,JSON_UNESCAPED_UNICODE);
         }
     }
     // 判断是否跳转到详情页
