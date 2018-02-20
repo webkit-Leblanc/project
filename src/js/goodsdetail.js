@@ -250,6 +250,7 @@ require(['config'],function(){
                         }
                     }
                     if(i==goodList.length){
+                        data[0].qty=$changenum[0].value*1;
                         goodList.push(data[0]);
                     }
                     document.cookie='goodList='+JSON.stringify(goodList)+'; path=/';
