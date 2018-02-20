@@ -14,9 +14,9 @@ gulp.task('server',function(){
     browserSync({
         // server:'./src/',
         // 指定端口
-        port:10086,
+        port:5458,
         // 代理服务器 browserSync代理php服务器(识别php 自动刷新)
-        proxy:'http://localhost:1000',
+        proxy:'http://localhost:110',
         // 监听文件修改
         files:['./src/**/*.html','./src/css/*.css','./src/api/*.php']
     });
